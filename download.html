@@ -1,118 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Download — Forex Trading Blueprint</title>
-    <style>
-      body {
-        font-family: Inter, system-ui, Arial;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        margin: 0;
-        background: linear-gradient(180deg, #eef6ff, #ffffff);
-        color: #0b1b3a;
-      }
-      .box {
-        background: #fff;
-        padding: 28px;
-        border-radius: 12px;
-        box-shadow: 0 20px 60px rgba(2, 6, 23, 0.06);
-        max-width: 720px;
-        text-align: center;
-      }
-      .btn {
-        background: #0066ff;
-        color: #fff;
-        padding: 12px 18px;
-        border-radius: 10px;
-        border: 0;
-        font-weight: 700;
-        cursor: pointer;
-      }
-      .muted {
-        color: #6f7b8c;
-        font-size: 14px;
-      }
-      .denied {
-        color: #b33;
-        font-weight: 700;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="box">
-      <h2 id="title">Preparing your download…</h2>
-      <p id="subtitle" class="muted">
-        We will start your download automatically once payment is confirmed.
-      </p>
-      <div style="margin-top: 16px">
-        <a id="dlBtn" class="btn" href="#" download style="display: none"
-          >📘 Download eBook</a
-        >
-      </div>
-      <p id="note" style="margin-top: 12px; font-size: 13px; color: #666">
-        If the download doesn't start, click the button above.
-      </p>
-      <p id="denied" class="denied" style="display: none; margin-top: 12px">
-        Access denied — invalid redirect or direct access.
-      </p>
-    </div>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Download — Forex Trading Blueprint</title>
 
-    <script>
-      /* ------------- CONFIG ------------- */
-      // Direct download link (converted to Drive "uc?export=download" format)
-      const DIRECT_DOWNLOAD =
-        "https://drive.google.com/uc?export=download&id=1AwNsYn7eUIsTjLfZQGdxp-6676ACfH2y";
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-      /* ------------- Logic ------------- */
-      function qp(name) {
-        return new URL(location.href).searchParams.get(name);
-      }
+<style>
+:root {
+  --blue:#0066ff;
+  --green:#00c77f;
+  --dark:#020b1f;
+  --card:#0b1533;
+  --txt:#d7e2ff;
+  --muted:#8ca2d8;
+}
 
-      function allowDownload() {
-        // show UI
-        document.getElementById("title").innerText =
-          "Download ready — thank you!";
-        document.getElementById("subtitle").innerText =
-          "Your eBook should download automatically. If not, click the button below.";
-        const dl = document.getElementById("dlBtn");
-        dl.href = DIRECT_DOWNLOAD;
-        dl.style.display = "inline-block";
-        // trigger automatic download after short delay
-        setTimeout(() => {
-          // open in same tab to trigger download
-          window.location.href = DIRECT_DOWNLOAD;
-        }, 900);
-      }
+body {
+  margin:0;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Poppins', sans-serif;
+  background:radial-gradient(circle at top, #0b163d, #020b1f);
+  color:var(--txt);
+}
 
-      // Detection checks (best-effort on static hosting):
-      // 1) Query param ?paid=1 (set by Razorpay redirect configuration)
-      // 2) URL contains razorpay or rzp payment id param (e.g. razorpay_payment_id)
-      // 3) Referrer includes "razorpay" or "pages.razorpay"
-      const paidParam = qp("paid") === "1";
-      const hasPaymentId =
-        qp("razorpay_payment_id") ||
-        qp("payment_id") ||
-        qp("payment_id") === true;
-      const ref = document.referrer || "";
-      const refOK =
-        ref.includes("razorpay") ||
-        ref.includes("pages.razorpay") ||
-        ref.includes("rzp.io");
+/* Glass Card */
+.box {
+  width:95%;
+  max-width:480px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:18px;
+  padding:35px;
+  text-align:center;
+  backdrop-filter:blur(10px);
+  box-shadow:0 10px 60px rgba(0,0,0,0.45);
+  animation:fadeIn 1s ease forwards;
+  opacity:0;
+}
 
-      if (paidParam || hasPaymentId || refOK) {
-        allowDownload();
-      } else {
-        // show denied message — hide download button
-        document.getElementById("title").innerText = "Unable to start download";
-        document.getElementById("subtitle").innerText =
-          "This page can only be accessed after a successful payment.";
-        document.getElementById("denied").style.display = "block";
-        document.getElementById("dlBtn").style.display = "none";
-      }
-    </script>
-  </body>
-</html>
+@keyframes fadeIn {
+  to { opacity:1; }
+}
+
+/* Success Icon */
+.checkmark {
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  border:3px solid var(--green);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 18px;
+  color:var(--green);
+  font-size:34px;
+  font-weight:900;
+  animation:pop 0.6s ease forwards;
+  opacity:0;
+}
+
+@keyframes pop {
+  0% { transform:scale(0.4); opacity:0; }
+  100% { transform:scale(1); opacity:1; }
+}
+
+/* Button */
+.btn {
+  background:var(--blue);
+  color:#fff;
+  padding:12px 20px;
+  border-radius:12px;
+  display:inline-block;
+  font-weight:700;
+  text-decoration:none;
+  border:none;
+  cursor:pointer;
+  margin-top:18px;
+  box-shadow:0 0 20px rgba(0,102,255,0.45);
+  transition:0.25s;
+}
+
+.btn:hover {
+  transform:translateY(-3px);
+  box-shadow:0 0 25px rgba(0,102,255,0.65);
+}
+
+/* Muted text */
+.muted {
+  font-size:14px;
+  color:var(--muted);
+  margin-top:12px;
+}
+
+/* Access Denied */
+.denied {
+  color:#ff5f5f;
+  font-weight:700;
+  margin-top:10px;
+  font-size:16px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  
+  <div id="successIcon" class="checkmark" style="display:none;">✔</div>
+
+  <h2 id="title" style="margin:0 0 10px;">Preparing your download…</h2>
+  <p id="subtitle" class="muted">We are verifying your payment.</p>
+
+  <a id="dlBtn" class="btn" href="#" download style="display:none;">
+    📘 Download Your eBook
+  </a>
+
+  <p id="note" class="muted" style="display:none;">
+    If download doesn’t start automatically, click the button above.
+  </p>
+
+  <p id="denied" class="denied" style="display:none;">
+    ❌ Access denied — Payment not verified!
+  </p>
+
+</div>
+
+<script>
+/* ------------- CONFIG ------------- */
+const DIRECT_DOWNLOAD =
+  "https://drive.google.com/uc?export=download&id=1AwNsYn7eUIsTjLfZQGdxp-6676ACfH2y";
+
+/* ------------- LOGIC ------------- */
+function qp(name){ return new URL(location.href).searchParams.get(name); }
+
+function allowDownload() {
+  document.getElementById("title").innerText = "Payment Successful!";
+  document.getElementById("subtitle").innerText =
+    "Your Forex Trading Blueprint eBook is ready.";
+  document.getElementById("successIcon").style.display = "flex";
+
+  const dl = document.getElementById("dlBtn");
+  dl.style.display = "inline-block";
+  dl.href = DIRECT_DOWNLOAD;
+
+  document.getElementById("note").style.display = "block";
+
+  // Auto-download
+  setTimeout(() => {
+    window.location.href = DIRECT_DOWNLOAD;
+  }, 1200);
+}
+
+const paidParam = qp("paid") === "1";
+const hasPID =
+  qp("razorpay_payment_id") ||
+  qp("payment_id") ||
+  qp("payment_id") === true;
+
+const ref = document.referrer || "";
+const refOK =
+  ref.includes("razorpay") ||
+  ref.includes("pages.razorpay") ||
+  ref.includes("rzp.io");
+
+if (paidParam || hasPID || refOK) {
+  allowDownload();
+} else {
+  document.getElementById("title").innerText = "Unable to provide download";
+  document.getElementById("subtitle").innerText =
+    "This secure page only works after successful payment.";
+  document.getElementById("denied").style.display = "block";
+}
+</script>
