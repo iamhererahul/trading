@@ -1,349 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Forex Trading Blueprint – ₹99 eBook</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Forex Trading Blueprint – ₹99 eBook</title>
+    <meta name="robots" content="index,follow" />
+    <style>
+      :root {
+        --blue: #0066ff;
+        --green: #03c172;
+        --muted: #70788a;
+        --bg: #f7fbff;
+        --card: #fff;
+      }
+      body {
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+        margin: 0;
+        background: linear-gradient(135deg, #e8f1ff, #ffffff);
+        color: #111;
+      }
+      .wrap {
+        max-width: 1100px;
+        margin: 28px auto;
+        padding: 22px;
+      }
+      .card {
+        background: var(--card);
+        border-radius: 16px;
+        padding: 26px;
+        box-shadow: 0 18px 45px rgba(2, 6, 23, 0.06);
+        margin-bottom: 18px;
+      }
+      .hero {
+        display: flex;
+        gap: 22px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .left {
+        flex: 1 1 480px;
+      }
+      .price {
+        background: var(--blue);
+        color: #fff;
+        padding: 9px 14px;
+        border-radius: 10px;
+        font-weight: 700;
+        display: inline-block;
+        margin-bottom: 12px;
+      }
+      h1 {
+        font-size: 36px;
+        margin: 6px 0 8px;
+        color: #071033;
+      }
+      p.lead {
+        color: var(--muted);
+        margin: 0 0 16px;
+      }
+      .cta {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        background: var(--blue);
+        color: #fff;
+        padding: 12px 18px;
+        border-radius: 10px;
+        border: 0;
+        font-weight: 800;
+        cursor: pointer;
+        box-shadow: 0 10px 30px rgba(0, 102, 255, 0.16);
+      }
+      .btn:hover {
+        transform: translateY(-3px);
+      }
+      .btn-green {
+        background: var(--green);
+      }
+      .mock {
+        width: 260px;
+        height: 340px;
+        border-radius: 12px;
+        background: linear-gradient(180deg, #dcefff, #ffffff);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        color: #003a8c;
+        box-shadow: 0 20px 60px rgba(0, 64, 153, 0.12);
+      }
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 12px;
+        margin-top: 18px;
+      }
+      .f {
+        background: #f3f7ff;
+        padding: 10px;
+        border-radius: 10px;
+        text-align: center;
+      }
+      footer {
+        text-align: center;
+        color: var(--muted);
+        font-size: 13px;
+        margin-top: 6px;
+      }
+      @media (max-width: 720px) {
+        h1 {
+          font-size: 26px;
+        }
+        .mock {
+          width: 180px;
+          height: 240px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="card hero">
+        <div class="left">
+          <div class="price">Only ₹99 – Limited Time</div>
+          <h1>Forex Trading Blueprint — Step-by-step eBook</h1>
+          <p class="lead">
+            Simple trading strategies, candlesticks, risk management, entry &
+            exit rules — made for beginners.
+          </p>
 
-<style>
-/* ------------------ GLOBAL STYLE ------------------ */
-:root{
-  --blue:#0066ff;
-  --dark:#0a0f24;
-  --text:#1b1b1b;
-  --muted:#70788a;
-  --card:#ffffff;
-}
+          <div class="cta">
+            <button id="buyLinkBtn" class="btn btn-green">
+              Buy via Payment Page (₹99)
+            </button>
+            <button id="openCheckout" class="btn">
+              Pay with Checkout (optional)
+            </button>
+          </div>
 
-body{
-  font-family:'Inter',sans-serif;
-  margin:0;
-  background:linear-gradient(135deg,#e8f1ff,#ffffff);
-  color:var(--text);
-  overflow-x:hidden;
-}
+          <div style="margin-top: 14px; color: var(--muted); font-size: 13px">
+            After successful payment you'll be redirected to the download page
+            and your eBook will download automatically.
+          </div>
 
-/* Smooth fade animations */
-.fade-in{
-  opacity:0;
-  animation:fadeIn 1s forwards;
-}
+          <div class="features" style="margin-top: 18px">
+            <div class="f">✔ 51 pages</div>
+            <div class="f">✔ 2 Proven Strategies</div>
+            <div class="f">✔ Risk Management</div>
+            <div class="f">✔ Entry & Exit Examples</div>
+          </div>
+        </div>
 
-@keyframes fadeIn{
-  to{opacity:1;}
-}
+        <div class="mock">FOREX<br />BLUEPRINT</div>
+      </div>
 
-.slide-up{
-  opacity:0;
-  transform:translateY(40px);
-  animation:slideUp 0.8s ease-out forwards;
-}
+      <div class="card">
+        <h3 style="margin: 0 0 8px">What Learners Say</h3>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap">
+          <div
+            style="
+              background: #fff;
+              padding: 12px;
+              border-radius: 10px;
+              box-shadow: 0 8px 20px rgba(2, 6, 23, 0.04);
+            "
+          >
+            “Worth much more than ₹99.” — Rohit
+          </div>
+          <div
+            style="
+              background: #fff;
+              padding: 12px;
+              border-radius: 10px;
+              box-shadow: 0 8px 20px rgba(2, 6, 23, 0.04);
+            "
+          >
+            “Clear strategies.” — Priya
+          </div>
+        </div>
+      </div>
 
-@keyframes slideUp{
-  to{opacity:1;transform:translateY(0);}
-}
-
-/* Layout */
-.container{
-  max-width:1100px;
-  margin:0 auto;
-  padding:25px;
-}
-
-.card{
-  background:var(--card);
-  border-radius:18px;
-  padding:32px;
-  margin-bottom:20px;
-  box-shadow:0 25px 60px rgba(0,0,0,0.08);
-  animation:fadeIn 1.2s ease forwards;
-}
-
-/* ---------- HERO SECTION ---------- */
-.hero{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  flex-wrap:wrap;
-}
-
-.hero-text{
-  flex:1 1 480px;
-}
-
-.hero-title{
-  font-size:40px;
-  font-weight:800;
-  color:var(--dark);
-  margin:0 0 10px;
-}
-
-.hero-sub{
-  font-size:17px;
-  color:var(--muted);
-  margin:0 0 22px;
-}
-
-.price-tag{
-  display:inline-block;
-  background:var(--blue);
-  color:white;
-  padding:10px 18px;
-  border-radius:12px;
-  font-weight:700;
-  margin-bottom:12px;
-  box-shadow:0 6px 18px rgba(0,102,255,0.4);
-}
-
-/* Buttons */
-.btn{
-  background:var(--blue);
-  color:white;
-  padding:14px 25px;
-  border-radius:12px;
-  text-decoration:none;
-  font-size:17px;
-  font-weight:700;
-  display:inline-block;
-  border:none;
-  cursor:pointer;
-  transition:0.25s;
-  box-shadow:0 6px 18px rgba(0,102,255,0.35);
-}
-
-.btn:hover{
-  transform:translateY(-3px);
-  box-shadow:0 12px 28px rgba(0,102,255,0.45);
-}
-
-.btn-green{
-  background:#03c172;
-}
-
-/* eBook mockup */
-.mockup{
-  width:290px;
-  height:380px;
-  border-radius:12px;
-  background:linear-gradient(180deg,#cfe0ff,#ffffff);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:800;
-  font-size:25px;
-  color:#003fad;
-  box-shadow:0 15px 50px rgba(0,51,153,0.25);
-  animation:float 3s infinite ease-in-out;
-}
-
-@keyframes float{
-  0%,100%{transform:translateY(0);}
-  50%{transform:translateY(-15px);}
-}
-
-/* Features */
-.features{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:18px;
-  margin-top:20px;
-}
-
-.feature{
-  background:#f3f7ff;
-  padding:16px;
-  border-radius:12px;
-  font-size:15px;
-  text-align:center;
-  animation:slideUp 1s ease forwards;
-  opacity:0;
-}
-
-/* Testimonials */
-.testimonial-box{
-  display:flex;
-  flex-wrap:wrap;
-  gap:15px;
-}
-
-.testi{
-  flex:1;
-  min-width:200px;
-  background:#f9faff;
-  padding:16px;
-  border-radius:12px;
-  color:#333;
-  box-shadow:0 5px 18px rgba(0,0,0,0.07);
-}
-
-/* Download section */
-#downloadSection{
-  display:none;
-  animation:fadeIn 1.2s ease forwards;
-}
-
-/* Footer */
-footer{
-  text-align:center;
-  color:var(--muted);
-  margin-top:20px;
-  font-size:14px;
-}
-</style>
-</head>
-
-<body>
-<div class="container">
-
-<!---------------- HERO ---------------->
-<div class="card hero fade-in">
-  <div class="hero-text slide-up">
-    <div class="price-tag">Only ₹99 – Limited Time</div>
-
-    <h1 class="hero-title">Forex Trading Blueprint eBook</h1>
-    <p class="hero-sub">Learn proven strategies, candlestick secrets, risk management & entry/exit rules in an easy-to-understand format.</p>
-
-    <div style="display:flex;gap:14px;flex-wrap:wrap;">
-      <button class="btn" id="buy-razorpay">Pay with Razorpay</button>
-      <button class="btn btn-green" id="buy-link">Buy via Payment Link</button>
+      <footer>© 2025 Forex Blueprint</footer>
     </div>
 
-    <p style="font-size:13px;margin-top:10px;color:var(--muted);">
-      Instant download unlocks automatically after payment.
-    </p>
-  </div>
+    <script>
+      /* -------------- CONFIG (already set for you) -------------- */
+      const PAYMENT_PAGE_URL = "https://rzp.io/rzp/TQfhoz3";
+      // DOWNLOAD PAGE URL where Razorpay will redirect AFTER PAYMENT.
+      // Replace <your-username> and <repo> with your GitHub Pages URL when you host.
+      const DOWNLOAD_PAGE_HINT =
+        "https://<your-username>.github.io/<repo>/download.html?paid=1";
 
-  <div class="mockup slide-up">
-    FOREX <br> BLUEPRINT
-  </div>
-</div>
+      /* -------------- Button actions -------------- */
+      document.getElementById("buyLinkBtn").addEventListener("click", () => {
+        // Open Razorpay Payment Page (user pays there). Make sure Redirect URL in Razorpay page is set to your download.html?paid=1
+        window.open(PAYMENT_PAGE_URL, "_blank");
+        alert(
+          "Payment Page opened in a new tab. After payment you will be redirected to the secure download page (if Redirect URL is configured)."
+        );
+      });
 
-<!------------ FEATURES ------------>
-<div class="card fade-in">
-  <h2 style="margin-top:0;">What You’ll Learn</h2>
-
-  <div class="features">
-    <div class="feature">✔ Beginner-friendly explanation</div>
-    <div class="feature">✔ 2 winning strategies</div>
-    <div class="feature">✔ Risk management formulas</div>
-    <div class="feature">✔ Live entry + exit examples</div>
-    <div class="feature">✔ Candlestick psychology</div>
-    <div class="feature">✔ 51 pages step-by-step</div>
-  </div>
-</div>
-
-<!------------ TESTIMONIALS ------------>
-<div class="card fade-in">
-  <h2 style="margin-top:0;">What Learners Say</h2>
-
-  <div class="testimonial-box">
-    <div class="testi">“I finally understood candlesticks. Worth more than ₹99.” — Rohit</div>
-    <div class="testi">“Clear entries & exits. Loved the examples.” — Priya</div>
-    <div class="testi">“Perfect for beginners. Must-buy!” — Akash</div>
-  </div>
-</div>
-
-<!------------ DOWNLOAD SECTION ------------>
-<div id="downloadSection" class="card">
-  <h2>Your eBook is Ready</h2>
-  <p>Click the button below to download your eBook.</p>
-
-  <a id="downloadBtn" class="btn" href="#" download>📘 Download eBook</a>
-
-  <p style="font-size:13px;color:var(--muted);margin-top:8px;">Save the file to your device for lifetime access.</p>
-</div>
-
-<footer>
-  © 2025 Forex Blueprint — Hosted on GitHub Pages
-</footer>
-
-</div>
-
-<!------------ JAVASCRIPT ------------>
-<script>
-/***************************************************
-  CONFIG → REPLACE THESE 3 VALUES
-***************************************************/
-const RAZORPAY_KEY_ID = "RAZORPAY_KEY_ID_REPLACE_ME";  
-const PAYMENT_LINK_URL = "PAYMENT_LINK_URL_REPLACE_ME";  
-const DOWNLOAD_URL = "DOWNLOAD_URL_REPLACE_ME";  
-const PRICE = 99;
-
-/***************************************************
-  HELPER FUNCTIONS
-***************************************************/
-function showDownload() {
-  const sec = document.getElementById('downloadSection');
-  sec.style.display = 'block';
-  document.getElementById('downloadBtn').href = DOWNLOAD_URL;
-  localStorage.setItem("paid", "1");
-}
-
-function qp(name){
-  return new URL(window.location.href).searchParams.get(name);
-}
-
-/* AUTO UNLOCK IF ?paid=1 */
-if(qp("paid") === "1" || localStorage.getItem("paid") === "1"){
-  showDownload();
-}
-
-/***************************************************
-  PAYMENT LINK BUY BUTTON
-***************************************************/
-document.getElementById("buy-link").onclick = () => {
-  if(!PAYMENT_LINK_URL.includes("http")){
-    alert("Please add your PAYMENT_LINK_URL in the code.");
-    return;
-  }
-  window.open(PAYMENT_LINK_URL, "_blank");
-  alert("After payment you will return to this page. Download will unlock automatically.");
-};
-
-/***************************************************
-  RAZORPAY CHECKOUT BUY BUTTON
-***************************************************/
-document.getElementById("buy-razorpay").onclick = async () => {
-  if(!RAZORPAY_KEY_ID.includes("rzp")){
-    alert("Please add your Razorpay Key ID.");
-    return;
-  }
-
-  // Load Razorpay checkout script
-  if(!window.Razorpay){
-    await new Promise(res=>{
-      let s=document.createElement("script");
-      s.src="https://checkout.razorpay.com/v1/checkout.js";
-      s.onload=res;
-      document.body.appendChild(s);
-    });
-  }
-
-  let options = {
-    key: RAZORPAY_KEY_ID,
-    amount: PRICE * 100,
-    currency:"INR",
-    name:"Forex Trading Blueprint",
-    description:"eBook Download",
-    theme:{ color:"#0066ff" },
-
-    handler:function(resp){
-      alert("Payment successful! Unlocking download.");
-      showDownload();
-    }
-  };
-
-  let rzp = new Razorpay(options);
-  rzp.open();
-};
-
-/***************************************************
-  CATCH RAZORPAY REDIRECT PARAMETERS
-***************************************************/
-if(qp("razorpay_payment_id")){
-  showDownload();
-}
-</script>
-
-</body>
+      /* Optional: open checkout using Razorpay Checkout if you also want checkout flow (needs key) */
+      document.getElementById("openCheckout").addEventListener("click", () => {
+        alert(
+          "Checkout option is optional — use Payment Page for secure redirect. If you want Checkout setup we can add it (requires API key)."
+        );
+      });
+    </script>
+  </body>
 </html>
